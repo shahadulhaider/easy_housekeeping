@@ -5,45 +5,20 @@ import 'package:easy_housekeeping/core/utils/currency_utils.dart';
 import 'package:easy_housekeeping/core/utils/date_utils.dart';
 import 'package:easy_housekeeping/core/widgets/stat_card.dart';
 import 'package:easy_housekeeping/core/theme/app_colors.dart';
-import 'package:easy_housekeeping/app_providers.dart';
 import 'package:easy_housekeeping/data/database/database.dart';
 import 'package:easy_housekeeping/features/dashboard/providers/dashboard_providers.dart';
-import 'package:drift/drift.dart' hide Column;
 import 'package:easy_housekeeping/l10n/generated/app_localizations.dart';
 
-class DashboardScreen extends ConsumerStatefulWidget {
+class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
 
   @override
-  ConsumerState<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends ConsumerState<DashboardScreen> {
-  int _headcount = 6;
-  bool _headcountLoaded = false;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final lowStockAsync = ref.watch(lowStockItemsProvider);
-    final headcountAsync = ref.watch(todayHeadcountProvider);
     final recentPurchasesAsync = ref.watch(recentPurchasesProvider);
     final monthlySpendAsync = ref.watch(monthlySpendProvider);
-
-    // Update headcount from DB once
-    if (!_headcountLoaded) {
-      headcountAsync.whenData((hc) {
-        if (hc != null && !_headcountLoaded) {
-          _headcountLoaded = true;
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) {
-              setState(() => _headcount = hc.baseCount + hc.guestCount);
-            }
-          });
-        }
-      });
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -62,15 +37,12 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
       body: RefreshIndicator(
         onRefresh: () async {
           ref.invalidate(lowStockItemsProvider);
-          ref.invalidate(todayHeadcountProvider);
           ref.invalidate(recentPurchasesProvider);
           ref.invalidate(monthlySpendProvider);
         },
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            _buildHeadcountCard(theme, l10n),
-            const SizedBox(height: 16),
             Text(
               l10n.runningLow,
               style: theme.textTheme.titleMedium?.copyWith(
@@ -202,6 +174,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                     : purchases
                           .map(
                             (p) => _buildRecentBazarCard(
+                              context,
                               theme,
                               AppDateUtils.relativeTime(p.date),
                               p.marketName ?? l10n.unknown,
@@ -230,78 +203,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         onPressed: () => context.push('/bazar/add'),
         icon: const Icon(Icons.add_shopping_cart),
         label: Text(l10n.addBazar),
-      ),
-    );
-  }
-
-  Widget _buildHeadcountCard(ThemeData theme, AppLocalizations l10n) {
-    return Card(
-      color: theme.colorScheme.primaryContainer,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            Icon(Icons.people, color: theme.colorScheme.onPrimaryContainer),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.peopleAtHomeToday,
-                    style: theme.textTheme.labelMedium?.copyWith(
-                      color: theme.colorScheme.onPrimaryContainer,
-                    ),
-                  ),
-                  Text(
-                    l10n.nPeople(_headcount),
-                    style: theme.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: theme.colorScheme.onPrimaryContainer,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            IconButton.filled(
-              onPressed: () {
-                if (_headcount > 1) {
-                  setState(() => _headcount--);
-                  _saveHeadcount();
-                }
-              },
-              icon: const Icon(Icons.remove),
-              style: IconButton.styleFrom(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
-              ),
-            ),
-            const SizedBox(width: 8),
-            IconButton.filled(
-              onPressed: () {
-                setState(() => _headcount++);
-                _saveHeadcount();
-              },
-              icon: const Icon(Icons.add),
-              style: IconButton.styleFrom(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _saveHeadcount() {
-    final db = ref.read(databaseProvider);
-    final today = AppDateUtils.startOfDay(DateTime.now());
-    db.upsertHeadcount(
-      DailyHeadcountsCompanion(
-        date: Value(today),
-        baseCount: Value(_headcount),
-        guestCount: const Value(0),
       ),
     );
   }
@@ -362,6 +263,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
   }
 
   Widget _buildRecentBazarCard(
+    BuildContext context,
     ThemeData theme,
     String date,
     String market,

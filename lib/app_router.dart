@@ -11,7 +11,6 @@ import 'package:easy_housekeeping/features/bazar/screens/bazar_detail_screen.dar
 import 'package:easy_housekeeping/features/reports/screens/reports_screen.dart';
 import 'package:easy_housekeeping/features/household/screens/household_screen.dart';
 import 'package:easy_housekeeping/features/household/screens/staff_detail_screen.dart';
-import 'package:easy_housekeeping/features/household/screens/salary_tracker_screen.dart';
 import 'package:easy_housekeeping/features/settings/screens/settings_screen.dart';
 import 'package:easy_housekeeping/features/notifications/screens/notifications_screen.dart';
 import 'package:easy_housekeeping/features/scanner/screens/scanner_screen.dart';
@@ -95,18 +94,10 @@ final router = GoRouter(
               builder: (context, state) => const HouseholdScreen(),
               routes: [
                 GoRoute(
-                  path: 'household',
-                  builder: (context, state) => const HouseholdScreen(),
-                ),
-                GoRoute(
                   path: 'staff/:id',
                   builder: (context, state) => StaffDetailScreen(
                     memberId: int.parse(state.pathParameters['id']!),
                   ),
-                ),
-                GoRoute(
-                  path: 'salary',
-                  builder: (context, state) => const SalaryTrackerScreen(),
                 ),
                 GoRoute(
                   path: 'settings',
@@ -169,9 +160,9 @@ class _AppShell extends StatelessWidget {
                 label: l10n.reports,
               ),
               NavigationDestination(
-                icon: const Icon(Icons.more_horiz_outlined),
-                selectedIcon: const Icon(Icons.more_horiz),
-                label: l10n.more,
+                icon: const Icon(Icons.people_outlined),
+                selectedIcon: const Icon(Icons.people),
+                label: l10n.household,
               ),
             ],
           );
