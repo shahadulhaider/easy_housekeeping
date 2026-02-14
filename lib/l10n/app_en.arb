@@ -1,0 +1,257 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "EasyHousekeeping",
+  "runningLow": "Running Low",
+  "allItemsStocked": "All items stocked!",
+  "monthlySpend": "Monthly Spend",
+  "thisMonth": "This Month",
+  "bazarTrips": "Bazar Trips",
+  "recentBazar": "Recent Bazar",
+  "noRecentPurchases": "No recent purchases",
+  "addBazar": "Add Bazar",
+  "peopleAtHomeToday": "People at Home Today",
+  "nPeople": "{count} people",
+  "@nPeople": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysLeft": "~{count} days left",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "inventory": "Inventory",
+  "consumables": "Consumables",
+  "durables": "Durables",
+  "locations": "Locations",
+  "noConsumableItems": "No consumable items",
+  "tapPlusToAddConsumable": "Tap + to add your first consumable item",
+  "noDurableItems": "No durable items",
+  "tapPlusToAddDurable": "Tap + to add your first durable item",
+  "noLocations": "No locations",
+  "addLocationsFromSettings": "Add locations from Settings",
+  "uncategorized": "Uncategorized",
+  "warranty": "Warranty",
+
+  "itemDetail": "Item Detail",
+  "itemNotFound": "Item not found",
+  "currentStock": "Current Stock",
+  "daysRemaining": "~{count} days remaining",
+  "@daysRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "consumptionLast30Days": "Consumption (Last 30 Days)",
+  "noConsumptionData": "No consumption data yet",
+  "purchaseHistory": "Purchase History",
+  "recordConsumption": "Record Consumption",
+
+  "addItem": "Add Item",
+  "consumable": "Consumable",
+  "durable": "Durable",
+  "itemName": "Item Name",
+  "category": "Category",
+  "location": "Location",
+  "currentStockLabel": "Current Stock",
+  "unit": "Unit",
+  "minimumStockAlert": "Minimum Stock (alert threshold)",
+  "purchasePrice": "Purchase Price (৳)",
+  "serialNumber": "Serial Number",
+  "condition": "Condition",
+  "conditionNew": "New",
+  "conditionGood": "Good",
+  "conditionFair": "Fair",
+  "conditionNeedsRepair": "Needs Repair",
+  "addPhoto": "Add Photo",
+  "saveItem": "Save Item",
+  "required": "Required",
+  "itemSaved": "Item saved",
+
+  "bazarLog": "Bazar Log",
+  "noBazarEntries": "No bazar entries yet",
+  "tapPlusToLogBazar": "Tap + to log your first bazar trip",
+  "newBazarEntry": "New Bazar Entry",
+  "save": "Save",
+  "date": "Date",
+  "purchasedBy": "Purchased By",
+  "marketShop": "Market / Shop",
+  "items": "Items",
+  "fromHistory": "From History",
+  "addItem2": "Add Item",
+  "qty": "Qty",
+  "price": "৳ Price",
+  "receiptPhotoAdded": "Receipt Photo Added ✓",
+  "addReceiptPhoto": "Add Receipt Photo",
+  "total": "Total",
+  "totalColon": "Total:",
+  "frequentlyPurchased": "Frequently Purchased",
+  "bazarEntrySaved": "Bazar entry saved",
+  "unknown": "Unknown",
+
+  "bazarDetails": "Bazar Details",
+  "purchaseNotFound": "Purchase not found",
+  "noLineItemsRecorded": "No line items recorded",
+  "receiptPhoto": "Receipt Photo",
+  "each": "each",
+
+  "reports": "Reports",
+  "monthly": "Monthly",
+  "weekly": "Weekly",
+  "totalSpend": "Total Spend",
+  "bazarTripsThisMonth": "{count} bazar trips this month",
+  "@bazarTripsThisMonth": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryBreakdown": "Category Breakdown",
+  "noDataForThisMonth": "No data for this month",
+  "topItems": "Top Items by Spend",
+  "noPurchaseData": "No purchase data yet",
+  "exportPdf": "Export PDF",
+  "shareWhatsApp": "WhatsApp",
+
+  "more": "More",
+  "household": "Household",
+  "family": "Family",
+  "staff": "Staff",
+  "salaryTracker": "Salary Tracker",
+  "salaryTrackerArrow": "Salary Tracker →",
+  "quickLinks": "Quick Links",
+  "active": "Active",
+
+  "settings": "Settings",
+  "notifications": "Notifications",
+  "staffDetail": "Staff Detail",
+  "staffDetails": "Staff Details",
+  "memberNotFound": "Member not found",
+  "perMonth": "/month",
+  "paymentHistory": "Payment History",
+  "noPayments": "No payments recorded",
+  "recordPayment": "Record Payment",
+  "paidOn": "Paid on {date}",
+  "@paidOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pending": "Pending",
+  "pay": "Pay",
+  "staffMembers": "{count} staff members",
+  "@staffMembers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "appearance": "Appearance",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "language": "Language",
+  "english": "English",
+  "bangla": "বাংলা",
+  "dataManagement": "Data Management",
+  "manageCategories": "Manage Categories",
+  "enableDisableCategories": "Enable/disable item categories",
+  "manageLocations": "Manage Locations",
+  "editStorageLocations": "Edit storage locations",
+  "notificationsSection": "Notifications",
+  "lowStockAlerts": "Low Stock Alerts",
+  "notifyWhenItemsRunLow": "Notify when items run low",
+  "warrantyReminders": "Warranty Reminders",
+  "alertBeforeWarrantyExpires": "Alert before warranty expires",
+  "salaryReminders": "Salary Reminders",
+  "remindWhenSalaryDue": "Remind when salary is due",
+  "data": "Data",
+  "backupData": "Backup Data",
+  "exportDatabase": "Export database to file",
+  "restoreData": "Restore Data",
+  "importFromBackup": "Import from backup file",
+  "clearAllData": "Clear All Data",
+  "deleteEverything": "Delete everything and start fresh",
+  "about": "About",
+  "version": "Version 1.0.0",
+
+  "notificationsTitle": "Notifications",
+  "noNotifications": "No active notifications",
+  "youreAllCaughtUp": "Reminders will appear here when items run low",
+  "reorderAlerts": "Reorder Alerts",
+  "warrantyAlerts": "Warranty Alerts",
+  "otherReminders": "Other Reminders",
+
+  "scanBarcode": "Scan Barcode",
+  "pointCameraAtBarcode": "Point camera at a barcode",
+  "productFound": "Product Found",
+  "noProductFound": "Product not found in database",
+  "addToInventory": "Add to Inventory",
+  "scanAgain": "Scan Again",
+  "addManually": "Add Manually",
+  "youCanAddManually": "You can add this item manually",
+
+  "welcomeToEasyHousekeeping": "Welcome to EasyHousekeeping",
+  "chooseLanguage": "Choose your language",
+  "continueButton": "Continue",
+  "selectLanguageSubtitle": "You can change this later in Settings",
+
+  "error": "Error",
+  "loading": "Loading...",
+  "retry": "Retry",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "ok": "OK",
+
+  "dashboard": "Dashboard",
+  "bazar": "Bazar",
+  "itemNumber": "Item {number}",
+  "@itemNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "totalWithAmount": "Total: {amount}",
+  "@totalWithAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "daysShort": "~{count}d",
+  "@daysShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "warrantyDate": "Warranty: {date}",
+  "@warrantyDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  }
+}
