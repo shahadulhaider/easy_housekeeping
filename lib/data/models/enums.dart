@@ -11,11 +11,15 @@ enum ItemType {
 enum MemberRole {
   admin,
   family,
+  relative,
+  guest,
   staff;
 
   String get label => switch (this) {
     admin => 'Admin',
     family => 'Family',
+    relative => 'Relative',
+    guest => 'Guest',
     staff => 'Staff',
   };
 }
@@ -23,12 +27,14 @@ enum MemberRole {
 enum StaffRole {
   cook,
   caregiver,
-  assistant;
+  assistant,
+  driver;
 
   String get label => switch (this) {
     cook => 'Cook',
     caregiver => 'Baby Caregiver',
     assistant => 'Assistant',
+    driver => 'Driver',
   };
 }
 
