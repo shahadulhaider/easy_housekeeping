@@ -183,5 +183,25 @@
   "itemNumber": "পণ্য {number}",
   "totalWithAmount": "মোট: {amount}",
   "daysShort": "~{count}দি",
-  "warrantyDate": "ওয়ারেন্টি: {date}"
+  "warrantyDate": "ওয়ারেন্টি: {date}",
+
+  "members": "সদস্য",
+  "whosHome": "বাসায় কে আছে",
+  "relative": "আত্মীয়",
+  "guest": "অতিথি",
+  "driver": "ড্রাইভার",
+  "addMember": "সদস্য যোগ করুন",
+  "memberName": "সদস্যের নাম",
+  "memberRole": "ভূমিকা",
+  "staffRole": "কর্মচারীর ভূমিকা",
+  "monthlySalaryLabel": "মাসিক বেতন (৳)",
+  "memberAdded": "সদস্য যোগ হয়েছে",
+  "selectRole": "ভূমিকা নির্বাচন করুন",
+  "selectStaffRole": "কর্মচারীর ভূমিকা নির্বাচন করুন",
+  "admin": "অ্যাডমিন",
+  "cook": "রান্নার লোক",
+  "caregiver": "দেখাশোনাকারী",
+  "assistant": "সহকারী",
+  "noMembers": "কোনো সদস্য নেই",
+  "addYourFirstMember": "প্রথম সদস্য যোগ করতে + চাপুন"
 }

@@ -253,5 +253,25 @@
         "type": "String"
       }
     }
-  }
+  },
+
+  "members": "Members",
+  "whosHome": "Who's Home",
+  "relative": "Relative",
+  "guest": "Guest",
+  "driver": "Driver",
+  "addMember": "Add Member",
+  "memberName": "Member Name",
+  "memberRole": "Role",
+  "staffRole": "Staff Role",
+  "monthlySalaryLabel": "Monthly Salary (৳)",
+  "memberAdded": "Member added",
+  "selectRole": "Select role",
+  "selectStaffRole": "Select staff role",
+  "admin": "Admin",
+  "cook": "Cook",
+  "caregiver": "Caregiver",
+  "assistant": "Assistant",
+  "noMembers": "No members yet",
+  "addYourFirstMember": "Tap + to add your first household member"
 }
